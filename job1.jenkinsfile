@@ -1,0 +1,26 @@
+def githubUrl = "https://github.com/nemiro54/andersen-internship"
+pipeline {
+  agent any
+  tools {
+    maven 'Maven 3.8.6'
+  }
+  triggers{
+    pollSCM('* * * * *')
+  }
+  stages {
+    stage ('Git') {
+      steps{
+        echo "Git step in process"
+        git branch: 'main', url: "${githubUrl}"
+        echo "Git step is finished"
+      }
+    }
+    stage ('Test') {
+      steps {
+        echo "Test in process"
+        sh 'mvn clean test'
+        echo "Test is finished"
+      }
+    }
+  }
+}
