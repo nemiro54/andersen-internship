@@ -5,7 +5,7 @@ def tomcatContextPath = "/andersen-internship"
 pipeline {
   agent any
   tools {
-    maven 'Maven3.8.6'
+    maven 'Maven 3.8.6'
   }
   triggers{
     pollSCM('* * * * *')
