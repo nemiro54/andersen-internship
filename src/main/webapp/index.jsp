@@ -3,7 +3,7 @@
 <h1>Hello World!</h1>
 <p>
     Hello Java!<br>
-    Script works!
+    I hope script works...<br>
 </p>
 </body>
 </html>
